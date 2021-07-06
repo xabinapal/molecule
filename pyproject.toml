@@ -15,5 +15,16 @@ skip-string-normalization = false
 profile = "black"
 known_first_party = "molecule"
 
+[tool.pytest.ini_options]
+markers = [
+    "serial: Run this test serially via filelock.",
+    "extensive"
+]
+norecursedirs = [
+  "build",
+  "src/molecule/cookiecutter/scenario/verifier/testinfra/{{cookiecutter.molecule_directory}}",
+  "src/molecule/test/scenarios"
+]
+
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
