@@ -55,6 +55,7 @@ repos:
         pass_filenames: false
         additional_dependencies:
           - ansible-lint>=5.0.10
+          - cached_property~=1.5;python_version<="3.7"
           - packaging
           - enrich>=1.2.5
           - subprocess-tee>=0.2.0

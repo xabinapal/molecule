@@ -29,6 +29,7 @@ import pkg_resources
 import pytest
 
 from molecule import logger, util
+from molecule.compat import cache
 from molecule.config import ansible_version
 from molecule.test.conftest import change_dir_to
 from molecule.text import strip_ansi_color
@@ -245,7 +246,7 @@ def get_virtualbox_executable():
 
 
 @pytest.helpers.register
-@util.lru_cache()
+@cache
 def supports_docker():
     docker = get_docker_executable()
     if docker:
